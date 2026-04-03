@@ -14,40 +14,40 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+      <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
           {/* Left: Logo */}
           <Link href={`/${lang}`} className="flex items-center gap-2.5 flex-shrink-0">
             <Image
               src="/images/logo.png"
               alt="Lovely Present logo"
-              width={40}
-              height={40}
+              width={44}
+              height={44}
               className="rounded-full object-cover"
               priority
             />
-            <span className="hidden sm:block font-serif font-bold text-[var(--color-navy)] text-lg leading-tight">
+            <span className="hidden sm:block font-serif font-bold text-[var(--color-navy)] text-xl leading-tight">
               Lovely Present
             </span>
           </Link>
 
           {/* Center: Desktop nav links */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-0.5">
             <Link
               href={`/${lang}/shop`}
-              className="px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-colors"
+              className="px-4 py-2 rounded-lg text-sm font-semibold text-gray-700 hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-colors"
             >
               {t.nav.shop}
             </Link>
             <Link
               href={`/${lang}/about`}
-              className="px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-colors"
+              className="px-4 py-2 rounded-lg text-sm font-semibold text-gray-700 hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-colors"
             >
               {t.nav.about}
             </Link>
             <Link
               href={`/${lang}/contact`}
-              className="px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-colors"
+              className="px-4 py-2 rounded-lg text-sm font-semibold text-gray-700 hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-colors"
             >
               {t.nav.contact}
             </Link>

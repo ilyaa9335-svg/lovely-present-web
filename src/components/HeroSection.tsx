@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Lang } from "@/lib/types";
 import { getTranslations } from "@/lib/translations";
 
@@ -10,16 +11,23 @@ export default function HeroSection({ lang }: HeroSectionProps) {
   const t = getTranslations(lang);
 
   return (
-    <section
-      className="relative h-[70vh] min-h-[500px] flex items-center justify-center"
-      style={{
-        backgroundImage: "url('/images/hero.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
+    <section className="relative h-[65vh] min-h-[460px] flex items-center justify-center overflow-hidden">
+      {/* Background image using next/image for optimization */}
+      <Image
+        src="/images/hero.jpg"
+        alt="Lovely Present flowers"
+        fill
+        className="object-cover"
+        sizes="100vw"
+        priority
+        quality={90}
+      />
+
+      {/* Elegant gradient overlay - darker at bottom, lighter at top */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/65" />
+
+      {/* Subtle backdrop blur layer at the bottom for text readability */}
+      <div className="absolute inset-x-0 bottom-0 h-1/2 backdrop-blur-[2px]" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-4">

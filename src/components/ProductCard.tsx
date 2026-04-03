@@ -15,8 +15,8 @@ export default function ProductCard({ product }: ProductCardProps) {
   const { t, lang } = useTranslation();
 
   return (
-    <div className="rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden bg-white">
-      <Link href={`/${lang}/product/${product.slug}`} className="block relative aspect-square overflow-hidden">
+    <div className="rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden bg-white">
+      <Link href={`/${lang}/product/${product.slug}`} className="block relative aspect-square overflow-hidden rounded-t-xl">
         <Image
           src={product.image}
           alt={product.name[lang]}

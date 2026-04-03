@@ -25,7 +25,7 @@ function ShopContent() {
       : products.filter((p) => p.category === (activeCategory as Category));
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
+    <div className="max-w-5xl mx-auto px-4 py-8">
       {/* Page title */}
       <h1 className="font-serif text-3xl md:text-4xl font-bold text-[var(--color-navy)] mb-6">
         {t.shop.title}

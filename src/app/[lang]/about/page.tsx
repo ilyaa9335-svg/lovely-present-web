@@ -39,16 +39,16 @@ export default async function AboutPage({
   const langReviews = reviews[lang] || reviews.cz;
 
   return (
-    <main className="max-w-6xl mx-auto px-4 py-12">
+    <main className="max-w-5xl mx-auto px-4 py-10">
       {/* Page title */}
-      <h1 className="font-serif text-4xl font-bold text-[var(--color-navy)] text-center mb-10">
+      <h1 className="font-serif text-4xl font-bold text-[var(--color-navy)] text-center mb-8">
         {t.about.title}
       </h1>
 
       {/* 2-column: storefront + story/info */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         {/* Left: storefront image */}
-        <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-md">
+        <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden shadow-md">
           <Image
             src="/images/storefront.jpg"
             alt="Lovely Present storefront"
@@ -107,9 +107,9 @@ export default async function AboutPage({
       </div>
 
       {/* Google Maps embed */}
-      <div className="w-full rounded-2xl overflow-hidden shadow-md mb-14 h-64 md:h-80">
+      <div className="w-full rounded-xl overflow-hidden shadow-md mb-12 h-[400px]">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.7!2d14.5!3d50.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b93e9e1c2b7f3%3A0x0!2s5.+Kv%C4%9Btna+1298%2F14%2C+Prague+14000!5e0!3m2!1sen!2scz!4v1680000000000!5m2!1sen!2scz"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.5!2d14.4394!3d50.0546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b93926ad8a5e7%3A0x3a847f9e03be1b0d!2z5S4ga3bEm3RuYSAxMjk4LzE0LCAxNDAgMDAgUHJhaGE!5e0!3m2!1sen!2scz"
           width="100%"
           height="100%"
           style={{ border: 0 }}
@@ -122,14 +122,14 @@ export default async function AboutPage({
 
       {/* Customer reviews */}
       <section>
-        <h2 className="font-serif text-3xl font-bold text-[var(--color-navy)] text-center mb-8">
+        <h2 className="font-serif text-3xl font-bold text-[var(--color-navy)] text-center mb-6">
           {t.about.reviews}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {langReviews.map((quote, i) => (
             <div
               key={i}
-              className="bg-[var(--color-pink-light)] rounded-2xl p-6 flex flex-col gap-3 shadow-sm"
+              className="bg-[var(--color-pink-light)] rounded-xl p-6 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow"
             >
               <p className="text-[var(--color-pink-brand)] text-xl tracking-widest">★★★★★</p>
               <p className="text-gray-700 leading-relaxed italic">&ldquo;{quote}&rdquo;</p>

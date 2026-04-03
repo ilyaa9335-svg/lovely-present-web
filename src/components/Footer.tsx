@@ -18,9 +18,9 @@ export default function Footer({ lang }: FooterProps) {
   const t = getTranslations(lang);
 
   return (
-    <footer className="bg-[var(--color-navy)] text-white">
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-[var(--color-navy)] text-white border-t border-gray-200">
+      <div className="max-w-5xl mx-auto px-4 py-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Column 1: Logo + tagline */}
           <div>
             <div className="flex items-center gap-2.5 mb-3">

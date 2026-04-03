@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Lang } from "@/lib/types";
 import { CartProvider } from "@/context/CartContext";
+import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CartPanel from "@/components/CartPanel";
@@ -23,6 +24,7 @@ export default async function LangLayout({
 
   return (
     <CartProvider>
+      <AnnouncementBar />
       <Navbar />
       <main className="flex-1">{children}</main>
       <Footer lang={lang} />

@@ -12,13 +12,13 @@ export default async function ContactPage({
   const t = getTranslations(lang);
 
   return (
-    <main className="max-w-6xl mx-auto px-4 py-12">
+    <main className="max-w-5xl mx-auto px-4 py-10">
       {/* Page title */}
-      <h1 className="font-serif text-4xl font-bold text-[var(--color-navy)] text-center mb-10">
+      <h1 className="font-serif text-4xl font-bold text-[var(--color-navy)] text-center mb-8">
         {t.contact.title}
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left column: contact cards + address/hours */}
         <div className="flex flex-col gap-5">
           {/* WhatsApp card */}
