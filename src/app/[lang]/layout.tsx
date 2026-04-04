@@ -4,7 +4,6 @@ import { CartProvider } from "@/context/CartContext";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CartPanel from "@/components/CartPanel";
 
 const LANGS: Lang[] = ["cz", "en", "ua", "ru"];
 
@@ -28,7 +27,6 @@ export default async function LangLayout({
       <Navbar />
       <main className="flex-1">{children}</main>
       <Footer lang={lang} />
-      <CartPanel />
     </CartProvider>
   );
 }
