@@ -53,14 +53,10 @@ export default async function AboutPage({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
           {/* Left: storefront image */}
           <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-lg border-4 border-white">
-            <Image
-              src="/images/about-hero.jpg?v=2"
-              alt="Lovely Present storefront"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-              quality={100}
-              priority
+            <img
+              src="/images/about-hero.jpg"
+              alt="Lovely Present"
+              className="w-full h-full object-cover"
             />
           </div>
 
