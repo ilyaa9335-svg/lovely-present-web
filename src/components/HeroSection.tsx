@@ -45,7 +45,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
                 <span className="font-bold text-[var(--color-navy)] text-sm">9.2</span>
-                <span className="text-gray-500 text-xs">on Wolt</span>
+                <span className="text-gray-500 text-xs">{t.hero.onWolt}</span>
               </div>
             </div>
 
@@ -53,11 +53,11 @@ export default function HeroSection({ lang }: HeroSectionProps) {
             <div className="flex flex-col sm:flex-row gap-3 mt-1">
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <svg className="w-4 h-4 text-[var(--color-pink-brand)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                <span>Same-day delivery via Wolt</span>
+                <span>{t.hero.sameDayDelivery}</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <svg className="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
-                <span>Order via WhatsApp</span>
+                <span>{t.hero.orderWhatsApp}</span>
               </div>
             </div>
 
@@ -65,12 +65,12 @@ export default function HeroSection({ lang }: HeroSectionProps) {
             <div className="flex items-center gap-6 mt-1 justify-center md:justify-start">
               <div className="text-center">
                 <p className="font-serif text-2xl font-bold text-[var(--color-navy)]">5k+</p>
-                <p className="text-xs text-gray-500 uppercase tracking-wider">Followers</p>
+                <p className="text-xs text-gray-500 uppercase tracking-wider">{t.hero.followers}</p>
               </div>
               <div className="w-px h-8 bg-[var(--color-pink-border)]" />
               <div className="text-center">
                 <p className="font-serif text-2xl font-bold text-[var(--color-navy)]">176</p>
-                <p className="text-xs text-gray-500 uppercase tracking-wider">Bouquets</p>
+                <p className="text-xs text-gray-500 uppercase tracking-wider">{t.hero.bouquets}</p>
               </div>
               <div className="w-px h-8 bg-[var(--color-pink-border)]" />
               <div className="text-center">

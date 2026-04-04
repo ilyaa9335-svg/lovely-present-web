@@ -15,7 +15,7 @@ export default function FeaturedProducts({ lang }: FeaturedProductsProps) {
     <section className="py-10 px-4 bg-[var(--color-muted)]">
       <div className="max-w-6xl mx-auto">
         <p className="text-center text-[var(--color-gold)] uppercase tracking-[0.2em] text-xs font-semibold mb-2">
-          Curated for you
+          {t.home.curatedLabel}
         </p>
         <h2 className="font-serif text-2xl md:text-3xl font-bold text-[var(--color-navy)] text-center mb-6 tracking-wide">
           {t.home.featured}

@@ -8,10 +8,10 @@ interface FooterProps {
 }
 
 const LANGUAGES: { code: Lang; label: string }[] = [
-  { code: "cz", label: "Cestina" },
+  { code: "cz", label: "Čeština" },
   { code: "en", label: "English" },
-  { code: "ua", label: "Ukrainska" },
-  { code: "ru", label: "Russkij" },
+  { code: "ua", label: "Українська" },
+  { code: "ru", label: "Русский" },
 ];
 
 export default function Footer({ lang }: FooterProps) {

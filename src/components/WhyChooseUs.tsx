@@ -51,7 +51,7 @@ export default function WhyChooseUs({ lang }: WhyChooseUsProps) {
     <section className="py-10 px-4 bg-[var(--color-navy)]">
       <div className="max-w-6xl mx-auto">
         <p className="text-center text-[var(--color-gold)] uppercase tracking-[0.2em] text-xs font-semibold mb-2">
-          Why us
+          {t.home.whyLabel}
         </p>
         <h2 className="font-serif text-2xl md:text-3xl font-bold text-white text-center mb-8 tracking-wide">
           {t.home.why}
