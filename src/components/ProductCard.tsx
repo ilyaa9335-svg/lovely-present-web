@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Product } from "@/lib/types";
@@ -13,6 +14,13 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   const { addItem } = useCart();
   const { t, lang } = useTranslation();
+  const [added, setAdded] = useState(false);
+
+  const handleAdd = () => {
+    addItem(product);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1500);
+  };
 
   return (
     <div className="rounded-2xl border border-[var(--color-pink-border)] bg-[var(--color-card)] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden group">
@@ -32,13 +40,17 @@ export default function ProductCard({ product }: ProductCardProps) {
           </h3>
         </Link>
         <p className="font-bold text-[var(--color-gold)] mt-1.5 text-lg tracking-tight">
-          {product.price} Kc
+          {product.price.toLocaleString()} Kč
         </p>
         <button
-          onClick={() => addItem(product)}
-          className="mt-4 w-full py-2.5 rounded-full border-2 border-[var(--color-pink-brand)] text-[var(--color-pink-brand)] text-sm font-semibold hover:bg-[var(--color-pink-brand)] hover:text-white transition-all duration-300 cursor-pointer"
+          onClick={handleAdd}
+          className={`mt-4 w-full py-2.5 rounded-full border-2 text-sm font-semibold transition-all duration-300 cursor-pointer ${
+            added
+              ? "border-green-500 bg-green-500 text-white"
+              : "border-[var(--color-pink-brand)] text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-brand)] hover:text-white"
+          }`}
         >
-          {t.shop.addToCart}
+          {added ? "✓ Added!" : t.shop.addToCart}
         </button>
       </div>
     </div>
