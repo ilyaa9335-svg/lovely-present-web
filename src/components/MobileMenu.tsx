@@ -54,27 +54,22 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
         {/* Nav links */}
         <nav className="flex-1 px-5 py-6 space-y-1">
-          <Link
-            href={`/${lang}/shop`}
-            onClick={onClose}
-            className="block px-4 py-3 rounded-xl text-[var(--color-navy)] font-medium hover:bg-[var(--color-pink-light)] hover:text-[var(--color-pink-brand)] transition-colors"
-          >
-            {t.nav.shop}
-          </Link>
-          <Link
-            href={`/${lang}/about`}
-            onClick={onClose}
-            className="block px-4 py-3 rounded-xl text-[var(--color-navy)] font-medium hover:bg-[var(--color-pink-light)] hover:text-[var(--color-pink-brand)] transition-colors"
-          >
-            {t.nav.about}
-          </Link>
-          <Link
-            href={`/${lang}/contact`}
-            onClick={onClose}
-            className="block px-4 py-3 rounded-xl text-[var(--color-navy)] font-medium hover:bg-[var(--color-pink-light)] hover:text-[var(--color-pink-brand)] transition-colors"
-          >
-            {t.nav.contact}
-          </Link>
+          {[
+            { href: `/${lang}`, label: t.nav.home },
+            { href: `/${lang}/shop`, label: t.nav.shop },
+            { href: `/${lang}/about`, label: t.nav.about },
+            { href: `/${lang}/contact`, label: t.nav.contact },
+            { href: `/${lang}/cart`, label: t.nav.cart },
+          ].map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={onClose}
+              className="block px-4 py-3 rounded-xl text-[var(--color-navy)] font-medium hover:bg-[var(--color-pink-light)] hover:text-[var(--color-pink-brand)] transition-colors"
+            >
+              {label}
+            </Link>
+          ))}
         </nav>
 
         {/* Language switcher at bottom */}

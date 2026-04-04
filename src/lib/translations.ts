@@ -2,7 +2,7 @@ import { Lang } from "./types";
 
 const translations = {
   cz: {
-    nav: { shop: "Obchod", about: "O nás", contact: "Kontakt" },
+    nav: { home: "Domů", shop: "Obchod", about: "O nás", contact: "Kontakt", cart: "Košík" },
     hero: { tagline: "Květiny & Dárky v Praze", cta: "Nakupovat" },
     home: {
       featured: "Oblíbené kytice",
@@ -74,7 +74,7 @@ const translations = {
     },
   },
   en: {
-    nav: { shop: "Shop", about: "About", contact: "Contact" },
+    nav: { home: "Home", shop: "Shop", about: "About", contact: "Contact", cart: "Cart" },
     hero: { tagline: "Flowers & Gifts in Prague", cta: "Shop Now" },
     home: {
       featured: "Featured Bouquets",
@@ -146,7 +146,7 @@ const translations = {
     },
   },
   ua: {
-    nav: { shop: "Магазин", about: "Про нас", contact: "Контакти" },
+    nav: { home: "Головна", shop: "Магазин", about: "Про нас", contact: "Контакти", cart: "Кошик" },
     hero: { tagline: "Квіти та подарунки в Празі", cta: "До магазину" },
     home: {
       featured: "Популярні букети",
@@ -218,7 +218,7 @@ const translations = {
     },
   },
   ru: {
-    nav: { shop: "Магазин", about: "О нас", contact: "Контакты" },
+    nav: { home: "Главная", shop: "Магазин", about: "О нас", contact: "Контакты", cart: "Корзина" },
     hero: { tagline: "Цветы и подарки в Праге", cta: "В магазин" },
     home: {
       featured: "Популярные букеты",

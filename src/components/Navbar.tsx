@@ -38,30 +38,21 @@ export default function Navbar() {
 
           {/* Center: Desktop nav links */}
           <nav className="hidden md:flex items-center gap-1">
-            <Link
-              href={`/${lang}`}
-              className="px-5 py-2 rounded-full text-sm font-medium text-[var(--color-navy)] hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-all duration-300 cursor-pointer"
-            >
-              Home
-            </Link>
-            <Link
-              href={`/${lang}/shop`}
-              className="px-5 py-2 rounded-full text-sm font-medium text-[var(--color-navy)] hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-all duration-300 cursor-pointer"
-            >
-              {t.nav.shop}
-            </Link>
-            <Link
-              href={`/${lang}/about`}
-              className="px-5 py-2 rounded-full text-sm font-medium text-[var(--color-navy)] hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-all duration-300 cursor-pointer"
-            >
-              {t.nav.about}
-            </Link>
-            <Link
-              href={`/${lang}/contact`}
-              className="px-5 py-2 rounded-full text-sm font-medium text-[var(--color-navy)] hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-all duration-300 cursor-pointer"
-            >
-              {t.nav.contact}
-            </Link>
+            {[
+              { href: `/${lang}`, label: t.nav.home },
+              { href: `/${lang}/shop`, label: t.nav.shop },
+              { href: `/${lang}/about`, label: t.nav.about },
+              { href: `/${lang}/contact`, label: t.nav.contact },
+              { href: `/${lang}/cart`, label: t.nav.cart },
+            ].map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className="px-5 py-2 rounded-full text-sm font-medium text-[var(--color-navy)] hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-all duration-300 cursor-pointer"
+              >
+                {label}
+              </Link>
+            ))}
           </nav>
 
           {/* Right: Language switcher (desktop) + Cart + Hamburger (mobile) */}
