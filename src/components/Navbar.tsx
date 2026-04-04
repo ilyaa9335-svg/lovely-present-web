@@ -39,6 +39,12 @@ export default function Navbar() {
           {/* Center: Desktop nav links */}
           <nav className="hidden md:flex items-center gap-1">
             <Link
+              href={`/${lang}`}
+              className="px-5 py-2 rounded-full text-sm font-medium text-[var(--color-navy)] hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-all duration-300 cursor-pointer"
+            >
+              Home
+            </Link>
+            <Link
               href={`/${lang}/shop`}
               className="px-5 py-2 rounded-full text-sm font-medium text-[var(--color-navy)] hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-all duration-300 cursor-pointer"
             >
