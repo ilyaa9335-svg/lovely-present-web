@@ -54,7 +54,7 @@ export default async function AboutPage({
           {/* Left: storefront image */}
           <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-lg border-4 border-white">
             <img
-              src="/images/about-hero.jpg"
+              src="/images/about-photo.jpg"
               alt="Lovely Present"
               className="w-full h-full object-cover"
             />
