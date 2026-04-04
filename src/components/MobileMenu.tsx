@@ -74,7 +74,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
         {/* Language switcher at bottom */}
         <div className="px-5 py-5 border-t border-gray-100">
-          <LanguageSwitcher dropUp />
+          <LanguageSwitcher dropUp alignLeft />
         </div>
       </div>
     </>
