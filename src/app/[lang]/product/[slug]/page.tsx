@@ -37,12 +37,12 @@ export default function ProductDetailPage() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
+    <div className="max-w-6xl mx-auto px-4 py-14">
       {/* Main product section */}
-      <div className="flex flex-col md:flex-row gap-10">
+      <div className="flex flex-col md:flex-row gap-12 md:gap-16">
         {/* Image */}
         <div className="w-full md:w-1/2">
-          <div className="relative aspect-square rounded-2xl overflow-hidden shadow-md">
+          <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg border-4 border-white">
             <Image
               src={product.image}
               alt={product.name[lang]}
@@ -55,13 +55,18 @@ export default function ProductDetailPage() {
         </div>
 
         {/* Details */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center gap-5">
-          <h1 className="font-serif text-3xl font-bold text-[var(--color-navy)]">
-            {product.name[lang]}
-          </h1>
+        <div className="w-full md:w-1/2 flex flex-col justify-center gap-6">
+          <div>
+            <p className="text-[var(--color-gold)] uppercase tracking-[0.2em] text-xs font-semibold mb-2">
+              {product.category}
+            </p>
+            <h1 className="font-serif text-3xl md:text-4xl font-bold text-[var(--color-navy)] tracking-wide">
+              {product.name[lang]}
+            </h1>
+          </div>
 
-          <p className="text-3xl font-bold text-[var(--color-pink-brand)]">
-            {product.price} Kč
+          <p className="text-3xl font-bold text-[var(--color-gold)]">
+            {product.price} Kc
           </p>
 
           <p className="text-gray-600 text-base leading-relaxed">
@@ -70,23 +75,23 @@ export default function ProductDetailPage() {
 
           {/* Quantity selector */}
           <div>
-            <p className="text-sm font-semibold text-[var(--color-navy)] mb-2">
+            <p className="text-sm font-semibold text-[var(--color-navy)] mb-3 tracking-wide">
               {t.product.quantity}
             </p>
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                className="w-10 h-10 rounded-full border-2 border-gray-200 flex items-center justify-center text-gray-600 hover:border-[var(--color-pink-brand)] hover:text-[var(--color-pink-brand)] transition-colors text-xl leading-none font-medium"
+                className="w-10 h-10 rounded-full border-2 border-[var(--color-pink-border)] flex items-center justify-center text-gray-600 hover:border-[var(--color-pink-brand)] hover:text-[var(--color-pink-brand)] transition-all duration-300 text-xl leading-none font-medium cursor-pointer bg-white"
                 aria-label="Decrease quantity"
               >
-                −
+                -
               </button>
               <span className="w-8 text-center text-lg font-semibold text-[var(--color-navy)]">
                 {quantity}
               </span>
               <button
                 onClick={() => setQuantity((q) => q + 1)}
-                className="w-10 h-10 rounded-full border-2 border-gray-200 flex items-center justify-center text-gray-600 hover:border-[var(--color-pink-brand)] hover:text-[var(--color-pink-brand)] transition-colors text-xl leading-none font-medium"
+                className="w-10 h-10 rounded-full border-2 border-[var(--color-pink-border)] flex items-center justify-center text-gray-600 hover:border-[var(--color-pink-brand)] hover:text-[var(--color-pink-brand)] transition-all duration-300 text-xl leading-none font-medium cursor-pointer bg-white"
                 aria-label="Increase quantity"
               >
                 +
@@ -97,7 +102,7 @@ export default function ProductDetailPage() {
           {/* Add to cart button */}
           <button
             onClick={handleAddToCart}
-            className="w-full py-4 rounded-full bg-[var(--color-pink-brand)] text-white font-semibold text-base hover:opacity-90 transition-opacity shadow-md"
+            className="w-full py-4 rounded-full bg-[var(--color-pink-brand)] text-white font-semibold text-base hover:bg-[#d1177d] transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
           >
             {t.product.addToCart}
           </button>
@@ -106,13 +111,22 @@ export default function ProductDetailPage() {
 
       {/* Related products */}
       {related.length > 0 && (
-        <div className="mt-16">
-          <h2 className="font-serif text-2xl font-bold text-[var(--color-navy)] mb-6">
+        <div className="mt-20">
+          <p className="text-[var(--color-gold)] uppercase tracking-[0.2em] text-xs font-semibold mb-2">
+            You may also like
+          </p>
+          <h2 className="font-serif text-2xl font-bold text-[var(--color-navy)] mb-8 tracking-wide">
             {t.product.related}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {related.map((p) => (
-              <ProductCard key={p.id} product={p} />
+            {related.map((p, i) => (
+              <div
+                key={p.id}
+                className="animate-fade-in-up"
+                style={{ animationDelay: `${i * 100}ms` }}
+              >
+                <ProductCard product={p} />
+              </div>
             ))}
           </div>
         </div>

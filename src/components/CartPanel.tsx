@@ -26,25 +26,25 @@ export default function CartPanel() {
       {/* Backdrop */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
+          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm cursor-pointer"
           onClick={closeCart}
         />
       )}
 
       {/* Slide-out panel */}
       <div
-        className={`fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 shadow-2xl flex flex-col transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-full max-w-md bg-[var(--color-pink-light)] z-50 shadow-2xl flex flex-col transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-          <h2 className="text-lg font-serif font-bold text-[var(--color-navy)]">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-[var(--color-pink-border)] bg-white/80 backdrop-blur-sm">
+          <h2 className="text-lg font-serif font-bold text-[var(--color-navy)] tracking-wide">
             {t.cart.title}
           </h2>
           <button
             onClick={closeCart}
-            className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+            className="p-2 rounded-full hover:bg-[var(--color-pink-light)] transition-colors duration-300 cursor-pointer"
             aria-label="Close cart"
           >
             <svg className="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -60,14 +60,14 @@ export default function CartPanel() {
               <svg className="w-16 h-16 opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
-              <p className="text-base">{t.cart.empty}</p>
+              <p className="text-base font-serif">{t.cart.empty}</p>
             </div>
           ) : (
-            <ul className="divide-y divide-gray-100 px-5">
+            <ul className="divide-y divide-[var(--color-pink-border)] px-5">
               {items.map(({ product, quantity }) => (
                 <li key={product.id} className="py-4 flex gap-3">
                   {/* Thumbnail */}
-                  <div className="relative w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-[var(--color-pink-light)]">
+                  <div className="relative w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 border border-[var(--color-pink-border)]">
                     <Image
                       src={product.image}
                       alt={product.name.en}
@@ -82,23 +82,23 @@ export default function CartPanel() {
                     <p className="font-medium text-[var(--color-navy)] text-sm leading-tight truncate">
                       {product.name.cz}
                     </p>
-                    <p className="text-[var(--color-pink-brand)] font-semibold text-sm mt-0.5">
-                      {product.price} Kč
+                    <p className="text-[var(--color-gold)] font-semibold text-sm mt-0.5">
+                      {product.price} Kc
                     </p>
 
                     {/* Quantity controls */}
                     <div className="flex items-center gap-2 mt-2">
                       <button
                         onClick={() => updateQuantity(product.id, quantity - 1)}
-                        className="w-7 h-7 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:border-[var(--color-pink-brand)] hover:text-[var(--color-pink-brand)] transition-colors text-lg leading-none"
+                        className="w-7 h-7 rounded-full border border-[var(--color-pink-border)] flex items-center justify-center text-gray-600 hover:border-[var(--color-pink-brand)] hover:text-[var(--color-pink-brand)] transition-colors duration-300 text-lg leading-none cursor-pointer bg-white"
                         aria-label="Decrease quantity"
                       >
-                        −
+                        -
                       </button>
                       <span className="w-6 text-center text-sm font-medium">{quantity}</span>
                       <button
                         onClick={() => updateQuantity(product.id, quantity + 1)}
-                        className="w-7 h-7 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:border-[var(--color-pink-brand)] hover:text-[var(--color-pink-brand)] transition-colors text-lg leading-none"
+                        className="w-7 h-7 rounded-full border border-[var(--color-pink-border)] flex items-center justify-center text-gray-600 hover:border-[var(--color-pink-brand)] hover:text-[var(--color-pink-brand)] transition-colors duration-300 text-lg leading-none cursor-pointer bg-white"
                         aria-label="Increase quantity"
                       >
                         +
@@ -109,7 +109,7 @@ export default function CartPanel() {
                   {/* Remove button */}
                   <button
                     onClick={() => removeItem(product.id)}
-                    className="self-start p-1.5 rounded-full hover:bg-red-50 hover:text-red-500 text-gray-400 transition-colors"
+                    className="self-start p-1.5 rounded-full hover:bg-red-50 hover:text-red-500 text-gray-400 transition-colors duration-300 cursor-pointer"
                     aria-label="Remove item"
                   >
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -124,10 +124,10 @@ export default function CartPanel() {
 
         {/* Footer - only show if cart has items */}
         {items.length > 0 && (
-          <div className="border-t border-gray-100 px-5 py-4 space-y-4">
+          <div className="border-t border-[var(--color-pink-border)] px-5 py-4 space-y-4 bg-white/80 backdrop-blur-sm">
             {/* Delivery method */}
             <div className="space-y-2">
-              <label className="flex items-center gap-3 cursor-pointer p-3 rounded-xl border border-gray-200 hover:border-[var(--color-pink-brand)] transition-colors">
+              <label className="flex items-center gap-3 cursor-pointer p-3 rounded-xl border border-[var(--color-pink-border)] hover:border-[var(--color-pink-brand)] transition-colors duration-300 bg-white">
                 <input
                   type="radio"
                   name="delivery"
@@ -138,7 +138,7 @@ export default function CartPanel() {
                 />
                 <span className="text-sm text-gray-700">{t.cart.pickupLabel}</span>
               </label>
-              <label className="flex items-center gap-3 cursor-pointer p-3 rounded-xl border border-gray-200 hover:border-[var(--color-pink-brand)] transition-colors">
+              <label className="flex items-center gap-3 cursor-pointer p-3 rounded-xl border border-[var(--color-pink-border)] hover:border-[var(--color-pink-brand)] transition-colors duration-300 bg-white">
                 <input
                   type="radio"
                   name="delivery"
@@ -155,22 +155,22 @@ export default function CartPanel() {
             <div className="space-y-1.5 text-sm">
               <div className="flex justify-between text-gray-600">
                 <span>{t.cart.subtotal}</span>
-                <span>{subtotal} Kč</span>
+                <span>{subtotal} Kc</span>
               </div>
               <div className="flex justify-between text-gray-600">
                 <span>{t.cart.delivery}</span>
-                <span>{deliveryFee === 0 ? t.cart.free : `${deliveryFee} Kč`}</span>
+                <span>{deliveryFee === 0 ? t.cart.free : `${deliveryFee} Kc`}</span>
               </div>
-              <div className="flex justify-between font-bold text-[var(--color-navy)] text-base pt-1.5 border-t border-gray-100">
+              <div className="flex justify-between font-bold text-[var(--color-navy)] text-base pt-1.5 border-t border-[var(--color-pink-border)]">
                 <span>{t.cart.total}</span>
-                <span>{total} Kč</span>
+                <span>{total} Kc</span>
               </div>
             </div>
 
             {/* Checkout button */}
             <button
               onClick={() => setCheckoutOpen(true)}
-              className="w-full py-3.5 rounded-xl bg-[var(--color-pink-brand)] text-white font-semibold hover:opacity-90 transition-opacity text-sm"
+              className="w-full py-3.5 rounded-full bg-[var(--color-pink-brand)] text-white font-semibold hover:bg-[#d1177d] transition-all duration-300 text-sm cursor-pointer shadow-md hover:shadow-lg"
             >
               {t.cart.checkout}
             </button>

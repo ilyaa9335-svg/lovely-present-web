@@ -15,28 +15,28 @@ export default function ProductCard({ product }: ProductCardProps) {
   const { t, lang } = useTranslation();
 
   return (
-    <div className="rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden bg-white">
-      <Link href={`/${lang}/product/${product.slug}`} className="block relative aspect-square overflow-hidden rounded-t-xl">
+    <div className="rounded-2xl border border-[var(--color-pink-border)] bg-[var(--color-card)] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden group">
+      <Link href={`/${lang}/product/${product.slug}`} className="block relative aspect-square overflow-hidden cursor-pointer">
         <Image
           src={product.image}
           alt={product.name[lang]}
           fill
-          className="object-cover transition-transform duration-300 hover:scale-105"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
       </Link>
-      <div className="p-4">
-        <Link href={`/${lang}/product/${product.slug}`}>
-          <h3 className="font-serif text-[var(--color-navy)] font-semibold text-base leading-tight hover:text-[var(--color-pink-brand)] transition-colors">
+      <div className="p-5">
+        <Link href={`/${lang}/product/${product.slug}`} className="cursor-pointer">
+          <h3 className="font-serif text-[var(--color-navy)] font-semibold text-base leading-tight hover:text-[var(--color-pink-brand)] transition-colors duration-300 tracking-wide">
             {product.name[lang]}
           </h3>
         </Link>
-        <p className="font-bold text-[var(--color-navy)] mt-1">
-          {product.price} Kč
+        <p className="font-bold text-[var(--color-gold)] mt-1.5 text-lg tracking-tight">
+          {product.price} Kc
         </p>
         <button
           onClick={() => addItem(product)}
-          className="mt-3 w-full py-2 rounded-full bg-[var(--color-pink-brand)] text-white text-sm font-semibold hover:opacity-90 transition-opacity"
+          className="mt-4 w-full py-2.5 rounded-full border-2 border-[var(--color-pink-brand)] text-[var(--color-pink-brand)] text-sm font-semibold hover:bg-[var(--color-pink-brand)] hover:text-white transition-all duration-300 cursor-pointer"
         >
           {t.shop.addToCart}
         </button>

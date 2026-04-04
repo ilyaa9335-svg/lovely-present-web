@@ -14,40 +14,45 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
-        <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
+      <header className="sticky top-0 z-30 bg-[#FDF2F8]/95 backdrop-blur-md border-b border-[var(--color-pink-border)] shadow-sm">
+        <div className="max-w-6xl mx-auto px-4 h-18 flex items-center justify-between gap-3">
           {/* Left: Logo */}
-          <Link href={`/${lang}`} className="flex items-center gap-2.5 flex-shrink-0">
+          <Link href={`/${lang}`} className="flex items-center gap-3 flex-shrink-0 cursor-pointer">
             <Image
               src="/images/logo.png"
               alt="Lovely Present logo"
-              width={44}
-              height={44}
-              className="rounded-full object-cover"
+              width={48}
+              height={48}
+              className="rounded-full object-cover ring-2 ring-[var(--color-pink-border)]"
               priority
             />
-            <span className="hidden sm:block font-serif font-bold text-[var(--color-navy)] text-xl leading-tight">
-              Lovely Present
-            </span>
+            <div className="hidden sm:block">
+              <span className="font-serif font-bold text-[var(--color-navy)] text-xl tracking-wide leading-tight block">
+                Lovely Present
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-gold)] font-medium">
+                Prague Flower Studio
+              </span>
+            </div>
           </Link>
 
           {/* Center: Desktop nav links */}
-          <nav className="hidden md:flex items-center gap-0.5">
+          <nav className="hidden md:flex items-center gap-1">
             <Link
               href={`/${lang}/shop`}
-              className="px-4 py-2 rounded-lg text-sm font-semibold text-gray-700 hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-colors"
+              className="px-5 py-2 rounded-full text-sm font-medium text-[var(--color-navy)] hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-all duration-300 cursor-pointer"
             >
               {t.nav.shop}
             </Link>
             <Link
               href={`/${lang}/about`}
-              className="px-4 py-2 rounded-lg text-sm font-semibold text-gray-700 hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-colors"
+              className="px-5 py-2 rounded-full text-sm font-medium text-[var(--color-navy)] hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-all duration-300 cursor-pointer"
             >
               {t.nav.about}
             </Link>
             <Link
               href={`/${lang}/contact`}
-              className="px-4 py-2 rounded-lg text-sm font-semibold text-gray-700 hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-colors"
+              className="px-5 py-2 rounded-full text-sm font-medium text-[var(--color-navy)] hover:text-[var(--color-pink-brand)] hover:bg-[var(--color-pink-light)] transition-all duration-300 cursor-pointer"
             >
               {t.nav.contact}
             </Link>
@@ -61,7 +66,7 @@ export default function Navbar() {
             <CartIcon />
             {/* Hamburger - mobile only */}
             <button
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="md:hidden p-2 rounded-lg hover:bg-[var(--color-pink-light)] transition-colors duration-300 cursor-pointer"
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >

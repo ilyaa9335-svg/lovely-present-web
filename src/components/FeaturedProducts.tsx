@@ -12,14 +12,23 @@ export default function FeaturedProducts({ lang }: FeaturedProductsProps) {
   const featured = getFeaturedProducts().slice(0, 4);
 
   return (
-    <section className="py-10 px-4 bg-[var(--color-pink-light)]">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="font-serif text-2xl md:text-3xl font-bold text-[var(--color-navy)] text-center mb-6">
+    <section className="py-16 px-4 bg-[var(--color-muted)]">
+      <div className="max-w-6xl mx-auto">
+        <p className="text-center text-[var(--color-gold)] uppercase tracking-[0.2em] text-xs font-semibold mb-2">
+          Curated for you
+        </p>
+        <h2 className="font-serif text-2xl md:text-3xl font-bold text-[var(--color-navy)] text-center mb-10 tracking-wide">
           {t.home.featured}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featured.map((product) => (
-            <ProductCard key={product.id} product={product} />
+          {featured.map((product, i) => (
+            <div
+              key={product.id}
+              className="animate-fade-in-up"
+              style={{ animationDelay: `${i * 100}ms` }}
+            >
+              <ProductCard product={product} />
+            </div>
           ))}
         </div>
       </div>

@@ -2,9 +2,13 @@
 
 @theme {
   --color-pink-brand: #E91E8C;
-  --color-pink-light: #FFF5F8;
+  --color-pink-secondary: #F9A8D4;
+  --color-pink-light: #FDF2F8;
+  --color-pink-border: #FBCFE8;
   --color-navy: #1a1a2e;
-  --color-orange-brand: #F5A623;
+  --color-gold: #A16207;
+  --color-muted: #F1EEF5;
+  --color-card: #FFFFFF;
 
   --font-serif: var(--font-playfair), ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -12,5 +16,31 @@
 
 body {
   color: #1a1a2e;
-  background: white;
+  background: #FDF2F8;
+}
+
+/* Smooth scrollbar hide for horizontal strips */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Staggered fade-in animation for product grids */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
 }
