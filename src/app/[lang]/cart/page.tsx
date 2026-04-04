@@ -31,54 +31,60 @@ export default function CartPage() {
           <div className="lg:col-span-2">
             <div className="divide-y divide-gray-100">
               {items.map(({ product, quantity }) => (
-                <div key={product.id} className="flex items-center gap-5 py-6">
-                  {/* Product image */}
-                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden flex-shrink-0 bg-gray-100">
-                    <img src={product.image} alt={product.name[lang]} className="w-full h-full object-cover" />
-                  </div>
+                <div key={product.id} className="py-5">
+                  {/* Top row: image + name/price + remove */}
+                  <div className="flex items-start gap-4 mb-3">
+                    {/* Product image */}
+                    <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-gray-100">
+                      <img src={product.image} alt={product.name[lang]} className="w-full h-full object-cover" />
+                    </div>
 
-                  {/* Name + unit price */}
-                  <div className="flex-1 min-w-0">
-                    <Link href={`/${lang}/product/${product.slug}`} className="font-serif text-lg italic text-[var(--color-navy)] hover:text-[var(--color-pink-brand)] transition-colors cursor-pointer">
-                      {product.name[lang]}
-                    </Link>
-                    <p className="text-sm text-gray-500 mt-0.5">{product.price.toLocaleString()} Kč</p>
-                  </div>
+                    {/* Name + unit price */}
+                    <div className="flex-1 min-w-0">
+                      <Link href={`/${lang}/product/${product.slug}`} className="font-serif text-base italic text-[var(--color-navy)] hover:text-[var(--color-pink-brand)] transition-colors cursor-pointer line-clamp-2">
+                        {product.name[lang]}
+                      </Link>
+                      <p className="text-sm text-gray-500 mt-1">{product.price.toLocaleString()} Kč</p>
+                    </div>
 
-                  {/* Quantity controls */}
-                  <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+                    {/* Remove */}
                     <button
-                      onClick={() => updateQuantity(product.id, quantity - 1)}
-                      className="w-10 h-10 flex items-center justify-center text-gray-500 hover:bg-gray-50 transition-colors cursor-pointer text-lg"
+                      onClick={() => removeItem(product.id)}
+                      className="p-2 text-gray-300 hover:text-red-500 transition-colors cursor-pointer flex-shrink-0"
+                      aria-label="Remove item"
                     >
-                      −
-                    </button>
-                    <span className="w-10 h-10 flex items-center justify-center text-sm font-semibold text-[var(--color-navy)] border-x border-gray-200 bg-white">
-                      {quantity}
-                    </span>
-                    <button
-                      onClick={() => updateQuantity(product.id, quantity + 1)}
-                      className="w-10 h-10 flex items-center justify-center text-gray-500 hover:bg-gray-50 transition-colors cursor-pointer text-lg"
-                    >
-                      +
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
                     </button>
                   </div>
 
-                  {/* Line total */}
-                  <p className="font-semibold text-[var(--color-navy)] text-base md:text-lg min-w-[80px] text-right">
-                    {(product.price * quantity).toLocaleString()} Kč
-                  </p>
+                  {/* Bottom row: quantity controls + line total */}
+                  <div className="flex items-center justify-between pl-24">
+                    {/* Quantity controls */}
+                    <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+                      <button
+                        onClick={() => updateQuantity(product.id, quantity - 1)}
+                        className="w-10 h-10 flex items-center justify-center text-gray-500 hover:bg-gray-50 transition-colors cursor-pointer text-lg"
+                      >
+                        −
+                      </button>
+                      <span className="w-10 h-10 flex items-center justify-center text-sm font-semibold text-[var(--color-navy)] border-x border-gray-200 bg-white">
+                        {quantity}
+                      </span>
+                      <button
+                        onClick={() => updateQuantity(product.id, quantity + 1)}
+                        className="w-10 h-10 flex items-center justify-center text-gray-500 hover:bg-gray-50 transition-colors cursor-pointer text-lg"
+                      >
+                        +
+                      </button>
+                    </div>
 
-                  {/* Remove */}
-                  <button
-                    onClick={() => removeItem(product.id)}
-                    className="p-2 text-gray-300 hover:text-red-500 transition-colors cursor-pointer"
-                    aria-label="Remove item"
-                  >
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
+                    {/* Line total */}
+                    <p className="font-semibold text-[var(--color-navy)] text-base">
+                      {(product.price * quantity).toLocaleString()} Kč
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>

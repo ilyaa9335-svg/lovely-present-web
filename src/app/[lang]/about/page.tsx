@@ -129,18 +129,31 @@ export default async function AboutPage({
           </div>
         </div>
 
-        {/* Google Maps embed */}
-        <div className="w-full rounded-2xl overflow-hidden shadow-lg mb-16 h-[400px] border-4 border-white">
-          <iframe
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=5.+Kv%C4%9Btna+1298%2F14%2C+140+00+Praha+4&zoom=16"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Lovely Present location"
-          />
+        {/* Location CTA */}
+        <div className="w-full rounded-2xl overflow-hidden shadow-lg mb-16 border-4 border-white bg-white">
+          <div className="relative w-full h-[220px] bg-gradient-to-br from-[var(--color-pink-light)] to-white flex flex-col items-center justify-center gap-4 p-6">
+            <div className="flex items-center gap-3">
+              <svg className="w-8 h-8 text-[var(--color-pink-brand)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+              <div>
+                <p className="font-serif font-bold text-[var(--color-navy)] text-lg">5. Kvetna 1298/14</p>
+                <p className="text-gray-500 text-sm">Prague 14000, Czech Republic</p>
+              </div>
+            </div>
+            <a
+              href="https://maps.google.com/?q=5.+Kv%C4%9Btna+1298%2F14%2C+140+00+Praha+4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--color-navy)] text-white font-semibold text-sm hover:bg-[var(--color-navy)]/90 transition-all shadow-md cursor-pointer"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+              </svg>
+              Get Directions
+            </a>
+          </div>
         </div>
 
         {/* Customer reviews */}
