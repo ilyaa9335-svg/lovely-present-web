@@ -59,6 +59,8 @@ export default async function AboutPage({
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
+              quality={100}
+              priority
             />
           </div>
 
