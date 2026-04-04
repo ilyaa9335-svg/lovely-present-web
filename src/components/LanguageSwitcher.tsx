@@ -11,7 +11,7 @@ const LANGUAGES: { code: Lang; label: string }[] = [
   { code: "ru", label: "RU" },
 ];
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({ dropUp = false }: { dropUp?: boolean }) {
   const params = useParams();
   const pathname = usePathname();
   const router = useRouter();
@@ -63,7 +63,7 @@ export default function LanguageSwitcher() {
       {open && (
         <ul
           role="listbox"
-          className="absolute right-0 mt-1 w-20 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden z-50"
+          className={`absolute right-0 w-20 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden z-50 ${dropUp ? "bottom-full mb-1" : "mt-1"}`}
         >
           {LANGUAGES.map((lang) => (
             <li key={lang.code}>
