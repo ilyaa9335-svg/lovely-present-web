@@ -21,6 +21,7 @@ const translations = {
       all: "Vše",
       custom: "Na zakázku",
       addToCart: "Do košíku",
+      noProducts: "V této kategorii nejsou žádné produkty.",
     },
     product: {
       addToCart: "Přidat do košíku",
@@ -40,6 +41,9 @@ const translations = {
       checkout: "Objednat",
       pickupLabel: "Osobní odběr (zdarma)",
       woltLabel: "Doručení Wolt (+99 Kč)",
+      pickup: "Osobní odběr",
+      wolt: "Wolt",
+      woltFee: "+99 Kč",
     },
     checkout: {
       title: "Již brzy!",
@@ -122,6 +126,7 @@ const translations = {
       all: "All",
       custom: "Custom",
       addToCart: "Add to Cart",
+      noProducts: "No products found in this category.",
     },
     product: {
       addToCart: "Add to Cart",
@@ -141,6 +146,9 @@ const translations = {
       checkout: "Proceed to Checkout",
       pickupLabel: "Pickup (free)",
       woltLabel: "Wolt Delivery (+99 Kč)",
+      pickup: "Pickup",
+      wolt: "Wolt",
+      woltFee: "+99 Kč",
     },
     checkout: {
       title: "Coming Soon!",
@@ -223,6 +231,7 @@ const translations = {
       all: "Усі",
       custom: "На замовлення",
       addToCart: "До кошика",
+      noProducts: "У цій категорії немає товарів.",
     },
     product: {
       addToCart: "Додати до кошика",
@@ -242,6 +251,9 @@ const translations = {
       checkout: "Оформити замовлення",
       pickupLabel: "Самовивіз (безкоштовно)",
       woltLabel: "Доставка Wolt (+99 Kč)",
+      pickup: "Самовивіз",
+      wolt: "Wolt",
+      woltFee: "+99 Kč",
     },
     checkout: {
       title: "Незабаром!",
@@ -324,6 +336,7 @@ const translations = {
       all: "Все",
       custom: "На заказ",
       addToCart: "В корзину",
+      noProducts: "В этой категории нет товаров.",
     },
     product: {
       addToCart: "Добавить в корзину",
@@ -343,6 +356,9 @@ const translations = {
       checkout: "Оформить заказ",
       pickupLabel: "Самовывоз (бесплатно)",
       woltLabel: "Доставка Wolt (+99 Kč)",
+      pickup: "Самовывоз",
+      wolt: "Wolt",
+      woltFee: "+99 Kč",
     },
     checkout: {
       title: "Скоро!",

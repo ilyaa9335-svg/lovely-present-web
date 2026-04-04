@@ -45,7 +45,7 @@ export default function CartPanel() {
               </svg>
               <p className="text-lg font-serif text-gray-400">{t.cart.empty}</p>
               <Link href={`/${lang}/shop`} onClick={closeCart} className="text-sm text-[var(--color-pink-brand)] hover:underline cursor-pointer">
-                Browse bouquets
+                {t.checkout.browseBouquets}
               </Link>
             </div>
           ) : (
@@ -87,13 +87,13 @@ export default function CartPanel() {
             <div className="grid grid-cols-2 gap-2">
               <button onClick={() => setDeliveryMethod("pickup")} className={`p-3 rounded-xl border-2 text-sm font-medium transition-all cursor-pointer ${deliveryMethod === "pickup" ? "border-[var(--color-pink-brand)] bg-[var(--color-pink-light)] text-[var(--color-pink-brand)]" : "border-gray-200 text-gray-600 hover:border-gray-300"}`}>
                 <svg className="w-5 h-5 mx-auto mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
-                Pickup
-                <span className="block text-xs text-gray-400 mt-0.5">Free</span>
+                {t.cart.pickup}
+                <span className="block text-xs text-gray-400 mt-0.5">{t.cart.free}</span>
               </button>
               <button onClick={() => setDeliveryMethod("wolt")} className={`p-3 rounded-xl border-2 text-sm font-medium transition-all cursor-pointer ${deliveryMethod === "wolt" ? "border-[var(--color-pink-brand)] bg-[var(--color-pink-light)] text-[var(--color-pink-brand)]" : "border-gray-200 text-gray-600 hover:border-gray-300"}`}>
                 <svg className="w-5 h-5 mx-auto mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H18.75M3.375 14.25h.008" /></svg>
-                Wolt
-                <span className="block text-xs text-gray-400 mt-0.5">+99 Kč</span>
+                {t.cart.wolt}
+                <span className="block text-xs text-gray-400 mt-0.5">{t.cart.woltFee}</span>
               </button>
             </div>
 

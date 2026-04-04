@@ -81,7 +81,7 @@ function ShopContent() {
 
       {filteredProducts.length === 0 && (
         <div className="text-center py-20 text-gray-400">
-          <p className="text-lg font-serif">No products found in this category.</p>
+          <p className="text-lg font-serif">{t.shop.noProducts}</p>
         </div>
       )}
     </div>

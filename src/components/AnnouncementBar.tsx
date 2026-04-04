@@ -3,10 +3,10 @@
 import { useTranslation } from "@/hooks/useTranslation";
 
 const announcements = {
-  cz: "Doprava zdarma u objednavek nad 2000 Kc",
-  en: "Free delivery on orders over 2000 Kc",
-  ua: "Bezkoshtovna dostavka vid 2000 Kc",
-  ru: "Besplatnaya dostavka ot 2000 Kc",
+  cz: "Doprava zdarma u objednávek nad 2000 Kč",
+  en: "Free delivery on orders over 2000 Kč",
+  ua: "Безкоштовна доставка від 2000 Kč",
+  ru: "Бесплатная доставка от 2000 Kč",
 };
 
 export default function AnnouncementBar() {
