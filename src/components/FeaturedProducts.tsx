@@ -12,12 +12,12 @@ export default function FeaturedProducts({ lang }: FeaturedProductsProps) {
   const featured = getFeaturedProducts().slice(0, 4);
 
   return (
-    <section className="py-16 px-4 bg-[var(--color-muted)]">
+    <section className="py-10 px-4 bg-[var(--color-muted)]">
       <div className="max-w-6xl mx-auto">
         <p className="text-center text-[var(--color-gold)] uppercase tracking-[0.2em] text-xs font-semibold mb-2">
           Curated for you
         </p>
-        <h2 className="font-serif text-2xl md:text-3xl font-bold text-[var(--color-navy)] text-center mb-10 tracking-wide">
+        <h2 className="font-serif text-2xl md:text-3xl font-bold text-[var(--color-navy)] text-center mb-6 tracking-wide">
           {t.home.featured}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

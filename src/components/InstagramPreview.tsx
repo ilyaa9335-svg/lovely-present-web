@@ -14,12 +14,12 @@ export default function InstagramPreview({ lang }: InstagramPreviewProps) {
   const previewProducts = products.slice(0, 6);
 
   return (
-    <section className="py-16 px-4 bg-[var(--color-pink-light)]">
+    <section className="py-10 px-4 bg-[var(--color-pink-light)]">
       <div className="max-w-6xl mx-auto">
         <p className="text-center text-[var(--color-gold)] uppercase tracking-[0.2em] text-xs font-semibold mb-2">
           @lovelypresent.cz
         </p>
-        <h2 className="font-serif text-2xl md:text-3xl font-bold text-[var(--color-navy)] text-center mb-10 tracking-wide">
+        <h2 className="font-serif text-2xl md:text-3xl font-bold text-[var(--color-navy)] text-center mb-6 tracking-wide">
           {t.home.instagram}
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">

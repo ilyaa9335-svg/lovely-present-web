@@ -12,8 +12,8 @@ export default function HeroSection({ lang }: HeroSectionProps) {
 
   return (
     <section className="relative bg-[var(--color-pink-light)] overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+      <div className="max-w-6xl mx-auto px-4 py-10 md:py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
           {/* Left: Text content */}
           <div className="flex flex-col gap-6 text-center md:text-left">
             <div>

@@ -40,7 +40,7 @@ export default async function AboutPage({
 
   return (
     <main className="bg-[var(--color-pink-light)]">
-      <div className="max-w-6xl mx-auto px-4 py-14">
+      <div className="max-w-6xl mx-auto px-4 py-10">
         {/* Page title */}
         <p className="text-center text-[var(--color-gold)] uppercase tracking-[0.2em] text-xs font-semibold mb-2">
           Our story

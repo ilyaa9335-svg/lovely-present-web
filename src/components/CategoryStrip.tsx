@@ -18,12 +18,12 @@ export default function CategoryStrip({ lang }: CategoryStripProps) {
   const t = getTranslations(lang);
 
   return (
-    <section className="py-14 px-4">
+    <section className="py-8 px-4">
       <div className="max-w-6xl mx-auto">
         <p className="text-center text-[var(--color-gold)] uppercase tracking-[0.2em] text-xs font-semibold mb-2">
           Browse
         </p>
-        <h2 className="font-serif text-2xl md:text-3xl font-bold text-[var(--color-navy)] text-center mb-10 tracking-wide">
+        <h2 className="font-serif text-2xl md:text-3xl font-bold text-[var(--color-navy)] text-center mb-6 tracking-wide">
           {t.home.categories}
         </h2>
         <div className="flex gap-5 overflow-x-auto pb-3 scrollbar-hide justify-center">
