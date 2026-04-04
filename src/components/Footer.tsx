@@ -20,7 +20,7 @@ export default function Footer({ lang }: FooterProps) {
   return (
     <footer className="bg-[var(--color-navy)] text-white">
       <div className="max-w-6xl mx-auto px-4 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Column 1: Logo + tagline */}
           <div>
             <div className="flex items-center gap-3 mb-4">

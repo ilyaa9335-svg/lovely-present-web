@@ -99,6 +99,9 @@ const translations = {
       hours: "Otevírací doba",
       hoursValue: "Po–Ne 10:00–19:30",
       reviews: "Co o nás říkají zákazníci",
+      ourStory: "Náš příběh",
+      getDirections: "Zobrazit trasu",
+      testimonials: "Recenze",
     },
     contact: {
       title: "Kontakt",
@@ -216,6 +219,9 @@ const translations = {
       hours: "Opening Hours",
       hoursValue: "Mon–Sun 10:00–19:30",
       reviews: "What Our Customers Say",
+      ourStory: "Our story",
+      getDirections: "Get Directions",
+      testimonials: "Testimonials",
     },
     contact: {
       title: "Contact",
@@ -333,6 +339,9 @@ const translations = {
       hours: "Години роботи",
       hoursValue: "Пн–Нд 10:00–19:30",
       reviews: "Що кажуть наші клієнти",
+      ourStory: "Наша історія",
+      getDirections: "Прокласти маршрут",
+      testimonials: "Відгуки",
     },
     contact: {
       title: "Контакти",
@@ -450,6 +459,9 @@ const translations = {
       hours: "Часы работы",
       hoursValue: "Пн–Вс 10:00–19:30",
       reviews: "Что говорят наши клиенты",
+      ourStory: "Наша история",
+      getDirections: "Построить маршрут",
+      testimonials: "Отзывы",
     },
     contact: {
       title: "Контакты",

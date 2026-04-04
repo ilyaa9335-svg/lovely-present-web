@@ -4,9 +4,9 @@ import { getTranslations } from "@/lib/translations";
 
 const reviews: Record<Lang, string[]> = {
   cz: [
-    "Nadherne kvetiny, vzdy cerstve a krasne zabalene!",
-    "Objednavam pravidelne, nikdy nezklamali.",
-    "Moc krasna dekorace! Doporucuji vsem.",
+    "Nádherné květiny, vždy čerstvé a krásně zabalené!",
+    "Objednávám pravidelně, nikdy nezklamali.",
+    "Moc krásná dekorace! Doporučuji všem.",
   ],
   en: [
     "Beautiful flowers, always fresh and beautifully wrapped!",
@@ -14,14 +14,14 @@ const reviews: Record<Lang, string[]> = {
     "Very beautiful decoration! I recommend to everyone.",
   ],
   ua: [
-    "Chudovi kvity, zavzhdy svizhi ta harno zahornuty!",
-    "Zamovlyayu rehulyarno — nikoly ne pidvodyly.",
-    "Duzhe harne oformlennya! Rekomenduyu vsim.",
+    "Чудові квіти, завжди свіжі та гарно загорнуті!",
+    "Замовляю регулярно — ніколи не підводили.",
+    "Дуже гарне оформлення! Рекомендую всім.",
   ],
   ru: [
-    "Voskhititelnye tsvety, vsegda svezhie i krasivo upakovannye!",
-    "Zakazyvayu regulyarno, nikogda ne podvodili.",
-    "Ochen krasivoe oformlenie! Rekomenduyu vsem.",
+    "Восхитительные цветы, всегда свежие и красиво упакованные!",
+    "Заказываю регулярно, никогда не подводили.",
+    "Очень красивое оформление! Рекомендую всем.",
   ],
 };
 
@@ -43,7 +43,7 @@ export default async function AboutPage({
       <div className="max-w-6xl mx-auto px-4 py-10">
         {/* Page title */}
         <p className="text-center text-[var(--color-gold)] uppercase tracking-[0.2em] text-xs font-semibold mb-2">
-          Our story
+          {t.about.ourStory}
         </p>
         <h1 className="font-serif text-4xl md:text-5xl font-bold text-[var(--color-navy)] text-center mb-12 tracking-wide">
           {t.about.title}
@@ -151,7 +151,7 @@ export default async function AboutPage({
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
               </svg>
-              Get Directions
+              {t.about.getDirections}
             </a>
           </div>
         </div>
@@ -159,7 +159,7 @@ export default async function AboutPage({
         {/* Customer reviews */}
         <section>
           <p className="text-center text-[var(--color-gold)] uppercase tracking-[0.2em] text-xs font-semibold mb-2">
-            Testimonials
+            {t.about.testimonials}
           </p>
           <h2 className="font-serif text-3xl font-bold text-[var(--color-navy)] text-center mb-4 tracking-wide">
             {t.about.reviews}

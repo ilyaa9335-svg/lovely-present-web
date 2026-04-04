@@ -40,7 +40,7 @@ function ShopContent() {
           {/* All button */}
           <button
             onClick={() => setActiveCategory("all")}
-            className={`flex-shrink-0 px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
+            className={`flex-shrink-0 whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
               activeCategory === "all"
                 ? "bg-[var(--color-pink-brand)] text-white shadow-md"
                 : "bg-white text-gray-700 border border-[var(--color-pink-border)] hover:border-[var(--color-pink-brand)] hover:text-[var(--color-pink-brand)]"
@@ -54,7 +54,7 @@ function ShopContent() {
             <button
               key={cat.slug}
               onClick={() => setActiveCategory(cat.slug)}
-              className={`flex-shrink-0 px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
+              className={`flex-shrink-0 whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
                 activeCategory === cat.slug
                   ? "bg-[var(--color-pink-brand)] text-white shadow-md"
                   : "bg-white text-gray-700 border border-[var(--color-pink-border)] hover:border-[var(--color-pink-brand)] hover:text-[var(--color-pink-brand)]"
