@@ -22,6 +22,20 @@ export default async function ContactPage({
           {t.contact.title}
         </h1>
 
+        {/* Google Map */}
+        <div className="mb-10 rounded-2xl overflow-hidden shadow-lg border-4 border-white">
+          <iframe
+            src="https://maps.google.com/maps?q=5.+Kv%C4%9Btna+1298/14,+Praha+4&output=embed"
+            width="100%"
+            height="300"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Lovely Present location"
+          />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left column: contact cards + address/hours */}
           <div className="flex flex-col gap-4">
